@@ -2,11 +2,11 @@ package com.mycompany.towerdefenses;
 
 /**
  *
- * @author R
+ * @author Ryan Morales
  */
-public class TowerDefenses {
-
+public class Main {
     public static void main(String[] args) {
         
     }
+    
 }
