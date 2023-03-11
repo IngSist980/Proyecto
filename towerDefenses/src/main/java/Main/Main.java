@@ -1,13 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Main;
+import javax.swing.*;
 
 /**
  *
  * @author R
- */
-public class Main {
+ */ //Al haces esto nos da acceso a todas las clases y métodos de esta librería
+public class Main extends JFrame {
+    
+    public  Main(){
+        //Declaramos el tamaño que va a tener la ventana (Ancho y largo). 
+        setSize(500, 500);
+        
+    
+    }
+    
+    public static void main(String[] args) {
+        
+    }
     
 }
