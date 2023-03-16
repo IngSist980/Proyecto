@@ -1,27 +1,28 @@
 package Main;
 import java.awt.image.BufferedImage;
+import javax.swing.JFrame;
 import java.io.IOException;
-  import java.io.InputStream;
+import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JFrame;
-import javax.imageio.ImageIO; 
+
+import javax.imageio.ImageIO;
 
 /**
  *
- *  @author Ryan Morales
- * 
+ * @author Ryan Morales
+ *
  */
 //Al hacer esto nos da acceso a todas las clases y métodos de esta librería
-
 public class Juego extends JFrame {
 //Creamos la pantalla del juego: 
- private pantallaJuego PantallaJuego;
- private BufferedImage img;
-       
-        public Juego() {    
-            
-        importimg();//
+
+    private pantallaJuego PantallaJuego;
+    private BufferedImage img;
+
+    public Juego() {
+
+        importImg();//
         //Declaramos el tamaño que va a tener la ventana (Ancho y largo). 
         setSize(630, 630);
         setVisible(true);//Se establece la vizibilidad 
@@ -31,24 +32,26 @@ public class Juego extends JFrame {
         /*Ahora estblacemos la ubicación de la ventana, al decirle "null": 
         el porgrama por defecto lo va a colocar en el centro de la pantalla*/
         setLocationRelativeTo(null);
-        PantallaJuego = new pantallaJuego();
+        PantallaJuego = new pantallaJuego(img);
         //Acá agregamos la pantalla: 
         add(PantallaJuego);
         // setVisible(true);
 
     }
-        
-        private void impotimg(){
-            //Nos permite leer una imagen: 
-            InputStream is =getClass().getResourceAsStream
-        ("/png-clipart-tower-defense-sprite-hand-painted-leaning-tower-of-pisa-fictional-character-cartoon-thumbnail");
-     try {
-         img=ImageIO.read(is);
-     } catch (IOException e) {
-         e.printStackTrace();
-     }
+
+    private void importImg() {
+        //Nos permite leer una imagen: 
+        InputStream is = getClass().getResourceAsStream("/spriteatlas.png");
+        try {
+            img = ImageIO.read(is);
+        } catch (IOException e) {
+            e.printStackTrace();
+           
+        }
         
         }
+
+    
 
     public static void main(String[] args) {
 
@@ -56,11 +59,4 @@ public class Juego extends JFrame {
 
     }
 
-    private void importimg() {
-        InputStream is = getClass().getResourceAsStream//Leer imagen 
-        ("/spritetowerdefense.png");
-    }
-
 }
-    
-

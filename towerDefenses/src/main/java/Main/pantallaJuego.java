@@ -1,5 +1,4 @@
 package Main;
-
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -14,9 +13,11 @@ public class pantallaJuego extends JPanel {
 
     //Para generar colores aleatorios
     private Random aleatorio;
+    private BufferedImage img;
 
     //Contructor de la pantalla para poder trabajar en ella. 
     public pantallaJuego(BufferedImage img) {
+        this.img=img;
         aleatorio = new Random();
 
     }
@@ -24,10 +25,11 @@ public class pantallaJuego extends JPanel {
     //Creo un método para poder generar colores en la pantalla. 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);/*Llamo a la súper clase jpanel para 
-         crear gráficos y dibujos*/
+        crear gráficos y dibujos*/
+        g.drawImage(img.getSubimage(32*9, 32, 32, 32), 0, 0, null);
  /*Necesitamos un cuadro para pintar: este recibe parametros 
         para especificar el cuadrado y sus dimensiones: */
-        for (int y = 0; y < 20; y++) {
+       /* for (int y = 0; y < 20; y++) {
             for (int x = 0; x < 20; x++) {
                 //Recorre  "x" y "y" 
                 g.setColor(colorAleatorio());
@@ -39,7 +41,7 @@ public class pantallaJuego extends JPanel {
 
             }
 
-        }
+        }*/
 
     }
 
