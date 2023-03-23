@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author R
+ * @author Ryan MOrales
  */
 public class GameScreen extends JPanel {
 
