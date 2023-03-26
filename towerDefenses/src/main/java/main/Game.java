@@ -11,11 +11,12 @@ import javax.imageio.*;
 
 /**
  *
- * @author R
+ * @author Ryan Morales 
  */
 public class Game extends JFrame {
 
     private GameScreen gameScreen;
+    
     private BufferedImage img;
 
     public Game() {
@@ -26,22 +27,26 @@ public class Game extends JFrame {
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-
-        gameScreen = new GameScreen(img);
-        //gameScreen.setImg(img);
+         gameScreen = new GameScreen(img);
         add(gameScreen);
 
     }
+    
 
         private void importImg() {
 
-        InputStream is = getClass().getResourceAsStream("/spriteatlas");
-
-       /* try {
-            img = ImageIO.read(is);
+      
+       InputStream is = getClass().getResourceAsStream("/spriteatlas.png");
+            
+      /* try {
+              img= ImageIO.read(is);
         } catch (IOException e) {
-            e.printStackTrace();
+           e.printStackTrace();
         }*/
+     
+        
+
+
 
     } 
 

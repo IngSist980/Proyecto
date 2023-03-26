@@ -9,24 +9,22 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Ryan MOrales
+ * @author Ryan Morales
  */
 public class GameScreen extends JPanel {
 
     private Random random;
     private BufferedImage img;
 
-    private ArrayList<BufferedImage> sprites = new ArrayList<>();
-
+    //private ArrayList<BufferedImage> sprites = new ArrayList<>();
     public GameScreen(BufferedImage img) {
         this.img = img;
-        loadSprites();
+        //  loadSprites();
         random = new Random();
     }
 
-    private void loadSprites() {
-
-        for (int y = 0; y < 10; y++) {
+    // private void loadSprites() {
+    /* for (int y = 0; y < 10; y++) {
             for (int x = 0; x < 10; x++) {
                 sprites.add(img.getSubimage(x * 32, y * 32, 32, 32));
 
@@ -34,27 +32,34 @@ public class GameScreen extends JPanel {
 
         }
 
-    }
-
+    }*/
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+        
+        g.drawImage(img, 0, 0, null); 
+        
+        
 
-        //  g.drawImage(sprites.get(8), 0, 0, null);
-        /*g.drawImage(img.getSubimage(32*9, 32, 32, 32)
-              , 0,0, null);*/
-        for (int y = 0; y < 20; y++) {
-            for (int x = 0; x < 20; x++) {
-                
-       g.drawImage(sprites.get(getRndInt()), x*32, y*32, null);
-               
-            }
+      //  for (int y = 0; y < 20; y++) {
+           // for (int x = 0; x < 20; x++) {
 
-        }
-    }
+             //   g.setColor(getRndColor());
+             //   g.fillRect(x * 32, y * 32, 32, 32);
+           // }
+
+            /*  // g.setColor(Color.red);
+        // g.drawImage(sprites.get(8), 0, 0, null);
+        // g.drawImage(img.getSubimage(32*9, 32, 32, 32)
+        //  , 0,0, null);
+        // for (int y = 0; y < 20; y++) {
+        //for (int x = 0; x < 20; x++) {
+        //  g.drawImage(sprites.get(getRndInt()), x*32, y*32, null);
     
-    private int getRndInt(){
-        return random.nextInt(100);
-    
+
+      private int getRndInt(){
+        return random.nextInt(100);*/
+        //}
+
     }
 
     private Color getRndColor() {
