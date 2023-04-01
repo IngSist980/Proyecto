@@ -2,10 +2,11 @@ package towerDefense;
 
 /**
  *
- * @author Ryan Morales 
+ * @author Ryan Morales. 
  */
 public class Mago extends Tropa{
     
+     
     public Mago() {
         super(10, 1.5);
     }

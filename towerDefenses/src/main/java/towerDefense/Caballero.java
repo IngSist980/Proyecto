@@ -2,11 +2,11 @@ package towerDefense;
 
 /**
  *
- * @author Ryan Morales
+ * @author Ryan Morales 
  */
 public class Caballero extends Tropa{
-      
-    public Caballero() {
+    
+     public Caballero() {
         super(15, 2);
     }
 
@@ -14,6 +14,6 @@ public class Caballero extends Tropa{
     public boolean venceA(Tropa tropa) {
         return tropa instanceof Arquero;
     }
-
+    
     
 }

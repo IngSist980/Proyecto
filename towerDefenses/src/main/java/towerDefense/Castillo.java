@@ -5,6 +5,7 @@ package towerDefense;
  * @author Ryan Morales 
  */
 public class Castillo {
+    
      private int vida;
 
     public Castillo(int vida) {
@@ -18,5 +19,4 @@ public class Castillo {
     public boolean estaEnPie() {
         return vida > 0;
     }
-    
 }

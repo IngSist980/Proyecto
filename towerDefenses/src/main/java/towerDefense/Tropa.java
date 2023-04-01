@@ -2,11 +2,11 @@ package towerDefense;
 
 /**
  *
- * @author Ryan Morales. 
+ * @author R
  */
-public abstract class  Tropa{
+public abstract class Tropa {
     
-     private int vida;
+    private int vida;
     private double danio;
 
     public Tropa(int vida, double danio) {
@@ -32,6 +32,5 @@ public abstract class  Tropa{
 
     // Método abstracto para determinar qué tropa vence a qué otra
     public abstract boolean venceA(Tropa tropa);
-    
     
 }

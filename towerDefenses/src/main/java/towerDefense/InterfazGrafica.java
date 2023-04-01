@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
  */
 public class InterfazGrafica extends JFrame{
     
-     private JButton btnMago;
+    private JButton btnMago;
     private JButton btnCaballero;
     private JButton btnArquero;
     private JButton btnIniciarCombate;
@@ -29,8 +29,8 @@ public class InterfazGrafica extends JFrame{
         setLocationRelativeTo(null);
         setVisible(true);
     }
-        
-         private void initComponents() {
+
+    private void initComponents() {
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
 
@@ -101,6 +101,11 @@ public class InterfazGrafica extends JFrame{
 
     private void agregarTropa(Tropa tropa) {
         // Implementar aquí la lógica de agregar tropa al panelTrop
-    }
+
+
+        
+}
+    
+    
     
 }

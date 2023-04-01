@@ -7,6 +7,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import java.io.IOException;
 import java.net.URL;
+
 /**
  *
  * @author Ryan Morales. 
@@ -25,8 +26,8 @@ public class Sonido {
         e.printStackTrace();
         
     }
-     }
     
+    }
     
     
 }
