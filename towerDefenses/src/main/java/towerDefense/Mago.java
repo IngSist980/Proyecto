@@ -4,6 +4,7 @@ package towerDefense;
  *
  * @author Ryan Morales 
  */
-public class InterfazGrafica {
+public class Mago {
+    
     
 }
