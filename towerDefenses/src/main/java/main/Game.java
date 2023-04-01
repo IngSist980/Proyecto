@@ -1,5 +1,6 @@
 package main;
 
+
 import java.awt.EventQueue;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -13,6 +14,8 @@ import javax.imageio.*;
  *
  * @author Ryan Morales 
  */
+
+/*
 public class Game extends JFrame {
 
     private GameScreen gameScreen;
@@ -45,7 +48,7 @@ public class Game extends JFrame {
         }*/
      
         
-
+/*
 
 
     } 
@@ -56,4 +59,6 @@ public class Game extends JFrame {
 
     }
 
+
 }
+*/

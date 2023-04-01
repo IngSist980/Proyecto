@@ -11,6 +11,7 @@ import javax.swing.JPanel;
  *
  * @author Ryan Morales
  */
+/*
 public class GameScreen extends JPanel {
 
     private Random random;
@@ -33,6 +34,8 @@ public class GameScreen extends JPanel {
         }
 
     }*/
+
+/*
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         
@@ -60,15 +63,17 @@ public class GameScreen extends JPanel {
         return random.nextInt(100);*/
         //}
 
-    }
+   // }
 
-    private Color getRndColor() {
 
-        int r = random.nextInt(256);
+   // private Color getRndColor() {
+
+      /*  int r = random.nextInt(256);
         int g = random.nextInt(256);
         int b = random.nextInt(256);
 
         return new Color(r, g, b);
+*/
 
-    }
-}
+   // }
+//}
