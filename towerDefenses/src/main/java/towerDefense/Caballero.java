@@ -6,7 +6,8 @@ package towerDefense;
  */
 public class Caballero extends Tropa{
    
-    super(15, 2);
+   public Caballero() {
+        super(15, 2);
     }
 
     @Override
