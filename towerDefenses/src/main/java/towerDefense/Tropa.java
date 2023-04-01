@@ -4,7 +4,7 @@ package towerDefense;
  *
  * @author Ryan Morales. 
  */
-public class Tropa {
+public abstract class  Tropa{
     
      private int vida;
     private double danio;
