@@ -28,6 +28,7 @@ public class InterfazGrafica extends JFrame{
         initComponents();
         setLocationRelativeTo(null);
         setVisible(true);
+    }
         
          private void initComponents() {
         Container contentPane = getContentPane();
