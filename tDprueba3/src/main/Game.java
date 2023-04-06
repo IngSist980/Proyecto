@@ -25,10 +25,11 @@ public class Game extends JFrame {
         setSize(640, 640);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        setVisible(true);
        
         gameScreen = new GameScreen(img);
         add(gameScreen);
+         setVisible(true);
+       
 
     }
 
