@@ -19,8 +19,10 @@ public class GameScreen extends JPanel {
          super.paintComponent(g);
          
          g.setColor(Color.red);
-         g.drawRect(50, 50, 100, 100);
-         g.fillRect(50,50, 100, 100);
+         g.fillRect(0, 0, 32, 32);
+         g.fillRect(32, 0, 32, 32);
+        /* g.drawRect(50, 50, 100, 100);
+         g.fillRect(50,50, 100, 100);*/
     
     }
     
