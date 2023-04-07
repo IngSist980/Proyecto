@@ -4,7 +4,8 @@ import java.awt.Color;
 import javax.swing.JPanel;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.util.Random;
+import java.security.SecureRandom;
+import javax.crypto.spec.PSource;
 
 /**
  *
@@ -12,7 +13,7 @@ import java.util.Random;
  */
 public class GameScreen extends JPanel {
 
-    private Random random;
+    private SecureRandom random;
     private BufferedImage img;
     private BufferedImage[] sprites = new BufferedImage[100];
 
@@ -21,7 +22,7 @@ public class GameScreen extends JPanel {
 
         loadSprites();
 
-        random = new Random();
+        random = new SecureRandom();
     }
 
     private void loadSprites() {
