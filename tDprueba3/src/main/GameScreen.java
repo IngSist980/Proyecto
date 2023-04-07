@@ -7,6 +7,7 @@ import java.awt.image.BufferedImage;
 import java.security.SecureRandom;
 import javax.crypto.spec.PSource;
 
+
 /**
  *
  * author Ryan Morales.
@@ -16,6 +17,8 @@ public class GameScreen extends JPanel {
     private SecureRandom random;
     private BufferedImage img;
     private BufferedImage[] sprites = new BufferedImage[100];
+    
+    
 
     public GameScreen(BufferedImage img) {
         this.img = img;
@@ -23,8 +26,10 @@ public class GameScreen extends JPanel {
         loadSprites();
 
         random = new SecureRandom();
+        //Establece el tiempo que debe de correr la imagen: 
+       
     }
-
+     //Las dimensiones de la imagen del juego: 
     private void loadSprites() {
         for (int y = 0; y < 10; y++) {
             for (int x = 0; x < 10; x++) {
@@ -35,14 +40,18 @@ public class GameScreen extends JPanel {
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-
+        //Las dimensiones del marco:  
         for (int y = 0; y < 20; y++) {
             for (int x = 0; x < 20; x++) {
                 g.drawImage(sprites[getRndInt()], x * 32, y * 32, null);
             }
         }
+        
+      
+        
     }
-
+    
+    
     private int getRndInt() {
         return random.nextInt(sprites.length);
     }
