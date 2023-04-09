@@ -37,12 +37,12 @@ public class Game extends JFrame implements Runnable {
     private Settings settings;
 
     public Game() {
-
+        
+        initClasses();
+        
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-
-        initClasses();
-
+        setResizable(false);//Impide cambiar el  tamaño de la pantalla. 
         add(gameScreen);
         pack();
         setVisible(true);
