@@ -2,7 +2,7 @@ package clases;
 
 public class Tropa {
     private String name;
-    private int puntos;
+    private double puntos;
     private Integer id;
 
     public Tropa(String name, int puntos, int id) {
@@ -19,11 +19,11 @@ public class Tropa {
         this.name = name;
     }
 
-    public int getPuntos() {
+    public double getPuntos() {
         return puntos;
     }
 
-    public void setPuntos(int puntos) {
+    public void setPuntos(double puntos) {
         this.puntos = puntos;
     }
 

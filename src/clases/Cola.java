@@ -52,6 +52,10 @@ public class Cola {
         return false;
     }
 
+    public int getLargo() {
+        return largo;
+    }
+
     public String imprimir() {
         String s = "";
         Nodo aux = frente;
