@@ -31,24 +31,31 @@ public class Camino {
         System.out.println("Comezando enfrentamiento de las tropas del camino: " + id);
         Tropa tropaCpu = null;
         Tropa tropaJugador = null;
+        System.out.println("\n Iniciando el enfrentamiento de las colas del camino \n ");
         while(colaCPU.getLargo() > 0 || colaJugador.getLargo() > 0) {
             if (colaCPU.atiende() != null && tropaCpu.getPuntos() == 0) {
                 tropaCpu = colaCPU.atiende().getDato();
+                System.out.println("Extrayendo nueva tropa del CPU : " + tropaCpu.getName());
             }
             if (colaJugador.atiende() != null && tropaJugador.getPuntos() == 0) {
                 tropaJugador = colaJugador.atiende().getDato();
+                System.out.println("Extrayendo nueva tropa del Jugador : " + tropaJugador.getName());
             }
             //Castillo jugador siempre va a ser 1
             //Castillo CPU siempre va a ser 2
             if (colaCPU.getLargo() == 0 || colaJugador.getLargo() == 0) {
                 if (colaCPU.getLargo() == 0) {
+                    System.out.println("\n La tropa de CPU fue derrotada");
                     //Se asigna el castillo que va a recibir el danno
                     resultado.setIdCastillo(2);
+                    System.out.println("El danno causado por la tropa: " + tropaJugador.getName() + " es de "+ tropaJugador.getPuntos());
                     resultado.setDanno(resultado.getDanno() + tropaJugador.getPuntos());
                     tropaJugador.setPuntos(0.0);
                 } else if (colaJugador.getLargo() == 0) {
+                    System.out.println("\n La tropa del Jugador fue derrotada");
                     //Se asigna el castillo que va a recibir el danno
                     resultado.setIdCastillo(1);
+                    System.out.println("El danno causado por la tropa: " + tropaCpu.getName() + " es de "+ tropaCpu.getPuntos());
                     resultado.setDanno(resultado.getDanno() + tropaCpu.getPuntos());
                     tropaCpu.setPuntos(0.0);
                 }
@@ -57,23 +64,31 @@ public class Camino {
                 // TOdos los caballeros son de id 2
                 // Todos los Arqueros son de id 3
                 if (tropaJugador.getId() == tropaCpu.getId()) {
+                    System.out.println("\n Las tropas enfrentandose son iguales, ambas pierden");
                     tropaJugador.setPuntos(0.0);
                     tropaCpu.setPuntos(0.0);
                 } else if (tropaJugador.getId() == 1 && tropaCpu.getId() == 2) {
+                    System.out.println("\n La tropa del jugador es un Mago y la del CPU un Caballero, por ende gana Mago");
                     tropaCpu.setPuntos(0.0);
                 } else if (tropaJugador.getId() == 1 && tropaCpu.getId() == 3) {
+                    System.out.println("\n La tropa del jugador es un Mago y la del CPU un Arquero, por ende gana Arquero");
                     tropaJugador.setPuntos(0.0);
                 } else if (tropaJugador.getId() == 2 && tropaCpu.getId() == 1) {
+                    System.out.println("\n La tropa del jugador es un Caballero y la del CPU un Mago, por ende gana Mago");
                     tropaJugador.setPuntos(0.0);
                 } else if (tropaJugador.getId() == 2 && tropaCpu.getId() == 3) {
+                    System.out.println("\n La tropa del jugador es un Caballero y la del CPU un Arquero, por ende gana Caballero");
                     tropaCpu.setPuntos(0.0);
                 } else if (tropaJugador.getId() == 3 && tropaCpu.getId() == 1) {
+                    System.out.println("\n La tropa del jugador es un Arquero y la del CPU un Mago, por ende gana Arquero");
                     tropaCpu.setPuntos(0.0);
                 } else if (tropaJugador.getId() == 3 && tropaCpu.getId() == 2) {
+                    System.out.println("\n La tropa del jugador es un Arquero y la del CPU un Caballero, por ende gana Caballero");
                     tropaJugador.setPuntos(0.0);
                 }
             }
         }
+        System.out.println("El total a dannar el castillo con ID: " + resultado.getIdCastillo() + " , es de: " + resultado.getDanno() + " Puntos.");
         return resultado;
     }
 
