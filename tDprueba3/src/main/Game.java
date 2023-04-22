@@ -26,8 +26,9 @@ public class Game extends JFrame implements Runnable {
 
     private final double FPS_SET = 120.0;
     private final double UPS_SET = 60.0;
+    private final long TIME_PER_FRAME_NS = (long) (1000000000.0 / FPS_SET);
+    private final long TIME_PER_UPDATE_NS = (long) (1000000000.0 / UPS_SET);
 
-   
 
     //Clases: 
     private Render render;
@@ -35,29 +36,29 @@ public class Game extends JFrame implements Runnable {
     private Playing playing;
     private Settings settings;
 
-    public Game() {
-
+   public Game() {
         initClasses();
-
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        setResizable(false);//Impide cambiar el  tamaño de la pantalla. 
+        setResizable(false);
         add(gameScreen);
         pack();
         setVisible(true);
-
     }
 
     private void initClasses() {
-        render = new Render(this);
-        gameScreen = new GameScreen(this);
+    render = new Render(this);
+    gameScreen = new GameScreen(this);
+    try {
         menu = new Menu(this);
         playing = new Playing(this);
         settings = new Settings(this);
-
+    } catch(Exception e) {
+        // Manejo de la excepción, puedes imprimir el mensaje o hacer cualquier otra cosa.
+        e.printStackTrace();
     }
+}
 
-    
 
     private void start() {
         gameThread = new Thread(this) {
