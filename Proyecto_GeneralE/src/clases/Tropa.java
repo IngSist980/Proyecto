@@ -2,19 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package proyecto_generale;
+package clases;
 
 /**
  *
  * @author Luis
  */
-public class Castillo {
+public class Tropa {
     private String name;
-    private  double puntos;
+    private double puntos;
+    private Integer id;
 
-    private int id;
-
-    public Castillo(String name, double puntos, int id) {
+    public Tropa(String name, double puntos, int id) {
         this.name = name;
         this.puntos = puntos;
         this.id = id;
@@ -34,5 +33,13 @@ public class Castillo {
 
     public void setPuntos(double puntos) {
         this.puntos = puntos;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }
