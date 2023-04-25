@@ -8,8 +8,8 @@ package clases;
  *
  * @author Luis
  */
-import clases.*;
 
+import clases.*;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -20,7 +20,7 @@ public class Main {
      */
     public static void main(String[] args) {
        Scanner input = new Scanner(System.in);
-
+Sonido s = new Sonido();
         //Creando los Castillos
         Castillo castilloJugador = new Castillo("Castillo Jugador", 10.0, 1);
         Castillo castilloCpu = new Castillo("Castillo CPU", 10.0, 2);
@@ -29,7 +29,7 @@ public class Main {
         int cont = 1;
 
         System.out.println("***Iniciando juego*** \n\n ");
-
+        Sonido.play("inicio.wav");
         System.out.println("Castillo de jugador creado con " + castilloJugador.getPuntos() + "puntos. ");
         System.out.println("Castillo de CPU creado con " + castilloJugador.getPuntos() + "puntos. ");
         //Comienza el ciclo del juego
