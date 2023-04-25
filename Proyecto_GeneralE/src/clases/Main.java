@@ -8,17 +8,18 @@ package clases;
  *
  * @author Luis
  */
-
 import clases.*;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 public class Main {
- 
+
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-          Scanner input = new Scanner(System.in);
+  
+            Scanner input = new Scanner(System.in);
 
         //Creando los Castillos
         Castillo castilloJugador = new Castillo("Castillo Jugador", 10.0, 1);
@@ -167,6 +168,4 @@ public class Main {
         }
     }
 
-    }
-    
-
+}

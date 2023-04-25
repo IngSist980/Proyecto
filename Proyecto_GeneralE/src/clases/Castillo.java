@@ -9,8 +9,7 @@ package clases;
  * @author Luis
  */
 public class Castillo {
-    
-    private String name;
+       private String name;
     private  double puntos;
 
     private int id;
@@ -37,3 +36,5 @@ public class Castillo {
         this.puntos = puntos;
     }
 }
+ 
+
