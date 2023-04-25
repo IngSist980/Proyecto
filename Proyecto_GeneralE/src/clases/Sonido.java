@@ -17,13 +17,18 @@ import java.io.File;
 import java.io.IOException;
 
 public class Sonido {
+    private Clip clip;
+    
+    
+    
 
-    public static void play(String filePath) {
+
+    public void play(String filePath) {
         new Thread(() -> {
             try {
                 File soundFile = new File("resources/" + filePath);
                 AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(soundFile);
-                Clip clip = AudioSystem.getClip();
+                clip = AudioSystem.getClip();
                 clip.open(audioInputStream);
                 clip.start();
                 // Hace que el hilo espere a que termine el sonido antes de cerrarse
@@ -33,4 +38,5 @@ public class Sonido {
             }
         }).start();
     }
-}
+
+
