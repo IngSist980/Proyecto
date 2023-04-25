@@ -91,3 +91,69 @@ public class Main {
                 }
 
             }
+            
+            for (int i = 0; i < cont+4 ; i++) {
+                System.out.println("Elija su " + (i + 1) + " tropa: \n 1. Para Mago digite 1 \n 2. Para Caballero digite 2 \n 3. Para Arquero digite 3");
+                int codigoTropa = input.nextInt();
+                System.out.println("Digite en que camino va a ir esta Tropa 1 o 2: ");
+                int codigoCamino = input.nextInt();
+                switch (codigoTropa) {
+                    case 1:
+                        if (codigoCamino == 1 ) {
+                            System.out.println("Agregando Mago a camino 1");
+                            colaJugadorCamino1.insercion(new Nodo(new Tropa("Mago", 1.5, codigoTropa)));
+                        } else if (codigoCamino == 2) {
+                            System.out.println("Agregando Mago a camino 2");
+                            colaJugadorCamino2.insercion(new Nodo(new Tropa("Mago", 1.5, codigoTropa)));
+                        }
+                        break;
+                    case 2:
+                        if (codigoCamino == 1 ) {
+                            System.out.println("Agregando Caballero a camino 1");
+                            colaJugadorCamino1.insercion(new Nodo(new Tropa("Caballero", 2, codigoTropa)));
+                        } else if (codigoCamino == 2) {
+                            System.out.println("Agregando Caballero a camino 2");
+                            colaJugadorCamino2.insercion(new Nodo(new Tropa("Caballero", 2, codigoTropa)));
+                        }
+                        break;
+                    case 3:
+                        if (codigoCamino == 1 ) {
+                            System.out.println("Agregando Arquero a camino 1");
+                            colaJugadorCamino1.insercion(new Nodo(new Tropa("Arquero", 1, codigoTropa)));
+                        } else if (codigoCamino == 2) {
+                            System.out.println("Agregando Arquero a camino 2");
+                            colaJugadorCamino2.insercion(new Nodo(new Tropa("Arquero", 1, codigoTropa)));
+                        }
+                        break;
+                }
+            }
+            System.out.println("\nEnfrentando tropas del camino 1: ");
+            ResultadoEnfrentamiento resultadoEnfrentamiento1 = camino1.enfrentarColas();
+            System.out.println("\nEnfrentando tropas del camino 2: ");
+            ResultadoEnfrentamiento resultadoEnfrentamiento2 = camino2.enfrentarColas();
+
+            if (resultadoEnfrentamiento1.getIdCastillo() == 1){
+                castilloJugador.setPuntos(castilloJugador.getPuntos() - resultadoEnfrentamiento1.getDanno());
+            } else {
+                castilloCpu.setPuntos(castilloCpu.getPuntos() - resultadoEnfrentamiento1.getDanno());
+            }
+            if (resultadoEnfrentamiento2.getIdCastillo() == 1){
+                castilloJugador.setPuntos(castilloJugador.getPuntos() - resultadoEnfrentamiento2.getDanno());
+            } else {
+                castilloCpu.setPuntos(castilloCpu.getPuntos() - resultadoEnfrentamiento2.getDanno());
+            }
+            cont++;
+
+        } while (castilloCpu.getPuntos() > 0 && castilloJugador.getPuntos() > 0);
+
+        if (castilloJugador.getPuntos() > 0 && castilloCpu.getPuntos() <= 0) {
+            System.out.println("\nEl jugador es el ganador");
+        } else if (castilloJugador.getPuntos() <= 0 && castilloCpu.getPuntos() > 0) {
+            System.out.println("\nEl CPU es el ganador");
+        } else if (castilloJugador.getPuntos() <= 0 && castilloCpu.getPuntos() <= 0) {
+            System.out.println("\nEl resultado es EMPATE");
+        }
+    }
+
+}
+
