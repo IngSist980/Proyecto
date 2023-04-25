@@ -2,11 +2,14 @@ package clases;
 
 public class Castillo {
     private String name;
-    private  int puntos;
+    private  double puntos;
 
-    public Castillo(String name, int puntos) {
+    private int id;
+
+    public Castillo(String name, double puntos, int id) {
         this.name = name;
         this.puntos = puntos;
+        this.id = id;
     }
 
     public String getName() {
@@ -17,11 +20,11 @@ public class Castillo {
         this.name = name;
     }
 
-    public int getPuntos() {
+    public double getPuntos() {
         return puntos;
     }
 
-    public void setPuntos(int puntos) {
+    public void setPuntos(double puntos) {
         this.puntos = puntos;
     }
 }

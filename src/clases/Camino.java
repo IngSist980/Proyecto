@@ -28,30 +28,44 @@ public class Camino {
 
     public ResultadoEnfrentamiento enfrentarColas() {
         ResultadoEnfrentamiento resultado = new ResultadoEnfrentamiento(0.0, 0);
-        System.out.println("Comezando enfrentamiento de las tropas del camino: " + id);
-        Tropa tropaCpu = null;
-        Tropa tropaJugador = null;
+        System.out.println("Comezando enfrentamiento de las tropas del camino: ");
+        Tropa tropaCpu;
+        // Se creo este if else para manejar cuando la cola de CPU viene con solo 1 dato y la de jugador viene vacia
+        if ( (colaCPU.getLargo() == 1 && colaJugador.getFrente() == null) ||  (colaCPU.getLargo() == 1 && colaJugador.getLargo() == 1) ) {
+            tropaCpu = new Tropa("Vacio", 0, 0);
+        } else {
+            tropaCpu = colaCPU.atiende().getDato();
+        }
+        Tropa tropaJugador;
+        //Se creo este if else para manejar cuando la cola del jugador viene vacia
+        if(colaJugador.getFrente() != null) {
+            tropaJugador = colaJugador.atiende().getDato();
+        } else {
+            tropaJugador = new Tropa("Vacio", 0.0, 0);
+        }
         System.out.println("\n Iniciando el enfrentamiento de las colas del camino \n ");
-        while(colaCPU.getLargo() > 0 || colaJugador.getLargo() > 0) {
-            if (colaCPU.atiende() != null && tropaCpu.getPuntos() == 0) {
+        while((colaCPU.getLargo() > 0 && tropaCpu.getPuntos() >= 0.0) || (colaJugador.getLargo() > 0 && tropaJugador.getPuntos() >= 0.0)) {
+            if (colaCPU.getFrente() != null && tropaCpu.getPuntos() == 0) {
                 tropaCpu = colaCPU.atiende().getDato();
                 System.out.println("Extrayendo nueva tropa del CPU : " + tropaCpu.getName());
             }
-            if (colaJugador.atiende() != null && tropaJugador.getPuntos() == 0) {
+            if (colaJugador.getFrente() != null && tropaJugador.getPuntos() == 0) {
                 tropaJugador = colaJugador.atiende().getDato();
                 System.out.println("Extrayendo nueva tropa del Jugador : " + tropaJugador.getName());
             }
             //Castillo jugador siempre va a ser 1
             //Castillo CPU siempre va a ser 2
-            if (colaCPU.getLargo() == 0 || colaJugador.getLargo() == 0) {
-                if (colaCPU.getLargo() == 0) {
+
+            //Un camino ya murio y causa dano al castillo
+            if ((colaCPU.getLargo() == 0 && tropaCpu.getPuntos() == 0.0) || (colaJugador.getLargo() == 0 && tropaJugador.getPuntos() == 0.0)) {
+                if (colaCPU.getLargo() == 0 && tropaJugador.getPuntos() != 0.0) {
                     System.out.println("\n La tropa de CPU fue derrotada");
                     //Se asigna el castillo que va a recibir el danno
                     resultado.setIdCastillo(2);
                     System.out.println("El danno causado por la tropa: " + tropaJugador.getName() + " es de "+ tropaJugador.getPuntos());
                     resultado.setDanno(resultado.getDanno() + tropaJugador.getPuntos());
                     tropaJugador.setPuntos(0.0);
-                } else if (colaJugador.getLargo() == 0) {
+                } else if (colaJugador.getLargo() == 0 && tropaCpu.getPuntos() != 0.0) {
                     System.out.println("\n La tropa del Jugador fue derrotada");
                     //Se asigna el castillo que va a recibir el danno
                     resultado.setIdCastillo(1);

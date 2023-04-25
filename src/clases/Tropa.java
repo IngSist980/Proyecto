@@ -5,7 +5,7 @@ public class Tropa {
     private double puntos;
     private Integer id;
 
-    public Tropa(String name, int puntos, int id) {
+    public Tropa(String name, double puntos, int id) {
         this.name = name;
         this.puntos = puntos;
         this.id = id;

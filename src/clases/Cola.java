@@ -15,11 +15,11 @@ public class Cola {
         if (frente == null) {
             frente = nuevoNodo;
             ultimo = nuevoNodo;
-            System.out.println("Agregando primera Tropa " + nuevoNodo.getDato().getName()+ " " + nuevoNodo.getDato().getId());
+            //System.out.println("Agregando primera Tropa " + nuevoNodo.getDato().getName()+ " " + nuevoNodo.getDato().getId());
         } else {
             ultimo.setAtras(nuevoNodo);
             ultimo = nuevoNodo;
-            System.out.println("Agregando Tropa a la cola " + nuevoNodo.getDato().getName()+ " " + nuevoNodo.getDato().getId());
+            //System.out.println("Agregando Tropa a la cola " + nuevoNodo.getDato().getName()+ " " + nuevoNodo.getDato().getId());
         }
         largo++;
     }
@@ -27,7 +27,7 @@ public class Cola {
     public Nodo atiende() {
         Nodo aux = frente;
         if (frente != null) {
-            System.out.println("Atendiendo a " + frente.getDato().getId()+ " " + frente.getDato().getName());
+            System.out.println("Extrayendo tropa " + frente.getDato().getId()+ " " + frente.getDato().getName());
             frente = frente.getAtras();
             aux.setAtras(null);
             largo--;
@@ -35,6 +35,9 @@ public class Cola {
         return aux;
     }
 
+    public Nodo getFrente() {
+        return frente;
+    }
     public boolean encuentra(Integer x) {
         if (frente != null) {
             if (ultimo.getDato().getId().equals(x)) {
