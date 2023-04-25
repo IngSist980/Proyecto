@@ -21,7 +21,18 @@ public class Sonido {
     
     
     
-
+ 
+    public void playLoop(String filePath) {
+        try {
+            File soundFile = new File("resources/" + filePath);
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(soundFile);
+            clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
+        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void play(String filePath) {
         new Thread(() -> {
