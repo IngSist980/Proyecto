@@ -9,8 +9,8 @@ package clases;
  * @author Luis
  */
 public class ResultadoEnfrentamiento {
-
-    private double danno;
+    
+  private double danno;
     private int idCastillo;
 
     public ResultadoEnfrentamiento(double danno, int idCastillo) {

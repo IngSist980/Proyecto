@@ -8,8 +8,8 @@ package clases;
  *
  * @author Luis
  */
-
 public class Camino {
+    
     private Cola colaCPU;
     private Cola colaJugador;
 
@@ -123,3 +123,4 @@ public class Camino {
                 '}';
     }
 }
+

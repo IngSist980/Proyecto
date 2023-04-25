@@ -9,6 +9,7 @@ package clases;
  * @author Luis
  */
 public class Nodo {
+    
     private Tropa dato;
     private Nodo atras;
 

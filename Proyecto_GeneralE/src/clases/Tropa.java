@@ -9,6 +9,7 @@ package clases;
  * @author Luis
  */
 public class Tropa {
+    
     private String name;
     private double puntos;
     private Integer id;

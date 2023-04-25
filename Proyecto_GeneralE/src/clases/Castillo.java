@@ -9,6 +9,7 @@ package clases;
  * @author Luis
  */
 public class Castillo {
+    
     private String name;
     private  double puntos;
 

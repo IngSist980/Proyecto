@@ -9,6 +9,7 @@ package clases;
  * @author Luis
  */
 public class Cola {
+    
     private Nodo frente;
     private Nodo ultimo;
     private int largo;
