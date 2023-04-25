@@ -39,4 +39,10 @@ public class Sonido {
         }).start();
     }
 
-
+    public void stop() {
+        if (clip != null) {
+            clip.stop();
+            clip.close();
+        }
+    }
+}

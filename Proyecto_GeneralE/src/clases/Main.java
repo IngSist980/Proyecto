@@ -20,7 +20,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Sonido sonidoInicio = new Sonido();
-        sonidoInicio.play("InicioV2.wav");
+        sonidoInicio.playLoop("InicioV2.wav");
         //Creando los Castillos
         Castillo castilloJugador = new Castillo("Castillo Jugador", 10.0, 1);
         Castillo castilloCpu = new Castillo("Castillo CPU", 10.0, 2);
